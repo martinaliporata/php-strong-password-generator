@@ -1,8 +1,6 @@
-<?php
-session_start();
-$_SESSION["username"] = chiamtaget
-
-
+<?php session_start();
+$_GET["username"]=isset($_GET["username"])?$_GET["username"]: '';
+$_GET["password"]=isset($_GET["password"])?$_GET["password"]: '';
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +11,10 @@ $_SESSION["username"] = chiamtaget
     <title>Document</title>
 </head>
 <body>
-    <form action="./login.php" method="get">
-        <label for="username">Please, insert your username</label>
-        <input type="submit" value="username" id="username">
-        <input type="button" value="username">
-    </form>
+<main>
+    <a href="./login.php">Login</a>
+    <h1>Benvenuto: <?php echo $_SESSION["users"]?></h1>
+    <a href="./logout.php">Logout</a>
+</main>
 </body>
 </html>
