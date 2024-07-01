@@ -1,5 +1,10 @@
 <?php
 session_start();
-header("location: ./login.php");
-session_unset()
+
+// se la sessione eiste, le dico session unset
+if(isset($_SESSION[$logged]) && $_SESSION[$logged] === true) {
+    session_unset();
+    // e ritorna alla pagina di login
+    Header("Location: ./login.php");
+}
 ?>

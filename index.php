@@ -1,6 +1,5 @@
-<?php session_start();
-$_GET["username"]=isset($_GET["username"])?$_GET["username"]: '';
-$_GET["password"]=isset($_GET["password"])?$_GET["password"]: '';
+<?php 
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +10,21 @@ $_GET["password"]=isset($_GET["password"])?$_GET["password"]: '';
     <title>Document</title>
 </head>
 <body>
-<main>
-    <a href="./login.php">Login</a>
-    <h1>Benvenuto: <?php echo $_SESSION["users"]?></h1>
-    <a href="./logout.php">Logout</a>
-</main>
+    <header>
+        <h1>
+            Pagina profilo
+        </h1>
+    </header>
+    <main>
+        <?php if(isset($_SESSION["logged"])) {?>
+            <h2>
+                Benvenuto <?php echo $_SESSION["username"]?>
+            </h2>
+        <?php } else { ?>
+            <h2>
+                Non hai i permessi, vai fuori!
+            </h2>
+        <?php }?>
+    </main>
 </body>
 </html>
